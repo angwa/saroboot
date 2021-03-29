@@ -1,15 +1,1 @@
-/vendor/bin
-/vendor/doctrine
-/vendor/myclabs
-/vendor/nikic
-/vendor/phar-io
-/vendor/phpdocumentor
-/vendor/phpspec
-/vendor/phpunit
-/vendor/sebastian
-/vendor/symfony
-/vendor/theseer
-/vendor/webmozart
-/vendor/guzzlehttp
-/vendor/psr
-/vendor/ralouphie
+/vendor
