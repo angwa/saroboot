@@ -10,7 +10,14 @@
             "email": "angwamoses@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
+      "repositories": [
+      {
+         "type": "vcs",
+         "url": "https://github.com/angwa/saroboot" 
+      }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
 
     "require": {
         "firebase/php-jwt": "dev-master",
@@ -18,5 +25,6 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^9"
-    }
+    },
+  
 }
