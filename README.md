@@ -9,8 +9,11 @@ Please view API endpoint Documentation here. [Saroboot Postman Doc.](https://doc
 
 This framework requires PHP 7.4  or higher
 .  
-You can simply clone download the source code
+You can simply clone download the source code or use composer like below
 
+```bash
+composer require angwa/saroboot
+```
 Create a new database and import the database file ```database.sql``` inside ```db``` folder on the root directory. The database only contain the  ```users``` table which we will use for demostration
 
 The next step is to configure your environment. Simply open ```config.php``` on the root directory and edit the password and database to suit you. The file looks like this
