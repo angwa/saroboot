@@ -4,18 +4,14 @@
     "type": "project",
     "license": "MIT",
     "version": "1.0",
+    "homepage": "https://github.com/angwa/saroboot",
     "authors": [
         {
             "name": "angwa",
             "email": "angwamoses@gmail.com"
         }
     ],
-      "repositories": [
-      {
-         "type": "vcs",
-         "url": "https://github.com/angwa/saroboot" 
-      }
-    ],
+
     "minimum-stability": "dev",
     "prefer-stable": true,
 
