@@ -38,7 +38,7 @@ class LoginController
 		$env = json_decode(json_encode($config->env),true); 
 		$issuer_claim = $env["hostname"]; // this can be the servername
         $issuedat_claim = time(); // issued at
-        $expire_claim = $issuedat_claim + (60*60); // expire time in minutes
+        $expire_claim = $issuedat_claim + (60*6000); // expire time in minutes
 
 		$token = array(
 			"iat" => $issuedat_claim,

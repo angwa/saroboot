@@ -56,8 +56,7 @@ class Auth
 		}
 		catch(\Exception $e)
 		{
-			header('HTTP/1.0 401 Unauthorized');
-			self::$status= "Unauthorized access";
+			self::$status= "Token does not exist on the server.";
 		    return false;
 		}
 		
