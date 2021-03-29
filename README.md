@@ -19,7 +19,7 @@ The next step is to configure your environment. Simply open ```config.php``` on 
 namespace
 {
     /**
-     * All codes written by Angwa, Ogbole Moses
+     * Framework is written by Angwa, Ogbole Moses
      * The configuration variable to be used
      * Edit the file fields to fit your need
      * All fields are necesarry
@@ -46,7 +46,7 @@ namespace
 ```
 ### Routing
 
-Routes to endpoints are written in ```route.php``` found in the root directory of your project. For example to create a route called ```login``` with post method use the one below
+Routes to endpoints are written in ```route.php``` found in the root directory of your project. For example to create a route called ```login``` with post method, you can simply do something like this.
 
 ```
 Route::add('/login', fn() =>LoginController::login(),'post');

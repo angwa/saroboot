@@ -8,7 +8,7 @@ class UserModel extends Database{
     public $data = array();
     public $key;
 
-    // This function can be used to perform all insertion. we will is used in registration
+    // This function can be used to perform all insertion. we used this in registration
 	public function create($table, $data = array())
     {
         if (count($data)) {
