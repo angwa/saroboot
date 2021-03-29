@@ -30,7 +30,7 @@ class Auth
 
 		if(empty($toArray["data"]["id"])){
 			header('HTTP/1.0 401 Unathorized access');
-		    self::$status = "Unauthorized access";
+		    self::$status = "Invalid token";
 		    return false;
 		}
 
@@ -73,7 +73,7 @@ class Auth
 		catch(\Exception $e)
 		{
 			//header('HTTP/1.0 401 Unauthorized');
-			self::$status= "Token does not exist on the server.";
+			self::$status= "Invalid token.";
 		    return false;
 		}
 		
