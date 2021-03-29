@@ -17,7 +17,7 @@ namespace
 
 			    'username' => 'root',		//the server username
 
-			    'password' => '',		// the server password
+			    'password' => '6242',		// the server password
 
 			    'database' => 'saroboot',	//Your database name
 			);
