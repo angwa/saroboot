@@ -10,3 +10,6 @@
 /vendor/symfony
 /vendor/theseer
 /vendor/webmozart
+/vendor/guzzlehttp
+/vendor/psr
+/vendor/ralouphie

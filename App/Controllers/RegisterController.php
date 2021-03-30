@@ -37,7 +37,7 @@ class RegisterController
 			header('HTTP/1.0 400 Bad Request');
 		 	return Response::message(["message" => "Unable to create account. Try again",'status']);
 		 }
-
+		 
 		return Response::message(["message" => "New account have been created succesfully", 
 		'data'=>$model->data]);
 
