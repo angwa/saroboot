@@ -9,13 +9,21 @@ Please view API endpoint Documentation here. [Saroboot Postman Doc.](https://doc
 
 This framework requires PHP 7.4  or higher
 .  
-You can simply clone  `` saroboot`` like below
+You can simply clone  `` saroboot`` like below on your bash
 
 ```bash
 git clone https://github.com/angwa/saroboot.git
 ```
 ## NOTICE: 
 The folder should be cloned to htdocs folder of your xamp or www folder of your wamp
+
+
+### Next step. VERY Important
+
+Run composer update on your bash
+```bash
+composer update
+```
 
 Create a new database and import the database file ```database.sql``` inside ```db``` folder on the root directory of ```saroboot```. The database only contain the  ```users``` table which we will use for demostration
 
@@ -69,13 +77,7 @@ To be able to communicate with the model and send back data to view, created a c
 
 ## Testing
 
-To run unit test, first update composer like below to include guzzle and phpunit test.
-
-Run the code to update composer
-```bash
-composer update
-```
-Then run test like below
+To run unit test, do the following.
 
 ``` bash
 vendor/bin/phpunit
