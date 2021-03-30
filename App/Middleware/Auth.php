@@ -14,19 +14,26 @@ class Auth
 	public static function authenticate()
 	{
 		if (Header::getAuthorizationHeader() == null) {
-		    header('HTTP/1.0 400 Bad Request');
+		    //header('HTTP/1.0 400 Bad Request');
 		    self::$status = "No authorization header sent";
 		    return false;
 		}
 	
 		$bearer = Header::getBearerToken();
-		$jwt = Header::convert_utf8($bearer);
-		$jwt = str_replace("Bearer ", "", $jwt);
+	
+		$jwt = str_replace("Bearer ", "", $bearer);
 
-		$unChecked = json_decode(base64_decode(str_replace('_', '/', str_replace('-','+',explode('.', $jwt)[1]))));
+		$unChecked = @json_decode(base64_decode(str_replace('_', '/', str_replace('-','+',explode('.', $jwt)[1]))));
 		$toArray = json_decode(json_encode($unChecked), true);
 
 		//getting id of user from payload to compare key in database
+
+		if(empty($toArray["data"]["id"])){
+			header('HTTP/1.0 401 Unathorized access');
+		    self::$status = "Unauthorized access";
+		    return false;
+		}
+
 		$userId = $toArray["data"]["id"];
 
 		$userModel = new UserModel();
@@ -38,7 +45,16 @@ class Auth
 		}
 
 		try{
-			$token = JWT::decode($jwt, $secretKey, array('HS256'));
+			$userId = $toArray["data"]["id"];
+
+			$userModel = new UserModel();
+			$secretKey  = "";
+			$loggedKey = $userModel->checkKey($userId);
+
+			if($loggedKey){
+				$secretKey = $loggedKey;
+			}
+			$token = JWT::decode($bearer, $secretKey, array('HS256'));
 			$now =  time();
 			
 			$config = new Config();
@@ -47,7 +63,7 @@ class Auth
 			if ($token->iss !== $serverName &&
 			    $token->exp < $now)
 			{
-			    header('HTTP/1.1 401 Unauthorized');
+			   header('HTTP/1.1 401 Unauthorized');
 			    self::$status = "Unauthorized access";
 		    	return false;
 			}
@@ -56,6 +72,7 @@ class Auth
 		}
 		catch(\Exception $e)
 		{
+			//header('HTTP/1.0 401 Unauthorized');
 			self::$status= "Token does not exist on the server.";
 		    return false;
 		}
