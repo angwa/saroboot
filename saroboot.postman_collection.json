@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "30690f1e-a094-4c9c-a62a-65c0eafa58ab",
+		"_postman_id": "76f25b6e-360e-4a92-ae47-a80eb5189896",
 		"name": "saroboot",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -57,7 +57,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MTcwNzY3NTEsImV4cCI6MTYxNzQzNjc1MSwiaXNzIjoibG9jYWxob3N0IiwiZGF0YSI6eyJpZCI6IjEiLCJmaXJzdG5hbWUiOiJKb2huIiwibGFzdG5hbWUiOiJEYW5pZWwiLCJlbWFpbCI6InRlc3RAbWFpbC5jb20ifX0.RaC7CoXGjFnAiO7QCsZfXD31AAtFaU8JoAaLBsM_FAY",
+							"value": "sdfs",
 							"type": "string"
 						}
 					]
@@ -128,7 +128,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "localhost/saroboot/api/profile",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"saroboot",
+						"api",
+						"profile"
+					]
 				}
 			},
 			"response": []
