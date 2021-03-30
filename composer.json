@@ -10,8 +10,8 @@
             "email": "angwamoses@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
-    "prefer-stable" : true,
+    "minimum-stability": "stable",
+
     "require": {
         "firebase/php-jwt": "dev-master",
         "guzzlehttp/guzzle": "^7.4@dev"
