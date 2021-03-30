@@ -11,11 +11,6 @@ This framework requires PHP 7.4  or higher
 .  
 You can simply clone download the source code
 
-
-Afterwards, Please run the code below:
-```bash
-composer update
-```
 Create a new database and import the database file ```database.sql``` inside ```db``` folder on the root directory. The database only contain the  ```users``` table which we will use for demostration
 
 The next step is to configure your environment. Simply open ```config.php``` on the root directory and edit the password and database to suit you. The file looks like this
@@ -63,8 +58,22 @@ With this route, you can visit the endpoint, lets say on a localhost
 If your route is a get method, you can ignore the last parameter in the add function statically called from Route class
 
 ### Controllers
-To be able to communicate with the model and send back data to view you can create a controller inside ```App/Controllers``` folder. 
+To be able to communicate with the model and send back data to view, created a controller controller inside ```App/Controllers``` folder.  and registered the controller using spl_autoload_register() in the folder App/Config/loader.php
 
+
+## Testing
+
+To run unit test, first update composer like below to include guzzle and phpunit test.
+
+Run the code to update composer
+```bash
+composer update
+```
+Then run test like below
+
+``` bash
+vendor/bin/phpunit
+```
 
 
 ### Security
