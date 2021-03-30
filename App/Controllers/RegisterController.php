@@ -11,6 +11,7 @@ class RegisterController
 {
 	public static function store()
 	{
+
 		$validate = new Validate();
 		$validation = $validate->check($_POST, array(
 			'firstname' => array('required' => true),
@@ -19,6 +20,7 @@ class RegisterController
 			'password' => array('required' => true, 'min'=>6)
 		));
 
+		//check if validation is not successful and return back
 		if (!$validation->successful()) {
 			
 			return Response::message(["message"=>"Validation Error", 'errors'=>$validation->errors()]);
@@ -37,7 +39,7 @@ class RegisterController
 			header('HTTP/1.0 400 Bad Request');
 		 	return Response::message(["message" => "Unable to create account. Try again",'status']);
 		 }
-		 
+
 		return Response::message(["message" => "New account have been created succesfully", 
 		'data'=>$model->data]);
 
