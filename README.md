@@ -1,6 +1,6 @@
 # Saroboot - PHP MVC framework for API coding
 
-This project (Interview Task) is written with Model - View - Controller (MVC) architecture. Look at this article for more understanding of [MVC Architecture](https://www.javatpoint.com/php-mvc-architecture). The framework is made for writting super API endpoints. It implements JSON Web Token for user  Authentication. Please take a look at  [JWT](https://jwt.io/). 
+This project is written with Model - View - Controller (MVC) architecture. Look at this article for more understanding of [MVC Architecture](https://www.javatpoint.com/php-mvc-architecture). The framework is made for writting super API endpoints. It implements JSON Web Token for user  Authentication. Please take a look at  [JWT](https://jwt.io/). 
 
 ## Postman Documentation
 Please import the postman collection from the root folder with the name ```saroboot.postman_collection.json``` after successful installation
