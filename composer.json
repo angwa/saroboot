@@ -15,7 +15,6 @@
     "prefer-stable": true,
 
     "require": {
-        "firebase/php-jwt": "dev-master",
         "guzzlehttp/guzzle": "^7.4@dev"
     },
     "require-dev": {

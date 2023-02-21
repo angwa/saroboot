@@ -7,15 +7,21 @@ use App\Controllers\ProfileController;
 use App\Controllers\LogoutController;
 use App\Config\Route;
 
-define('BASEPATH','/api');
+define('BASEPATH', '/');
+
 
 //adding application routes
-Route::add('/login', fn() =>LoginController::login(),'post');
+Route::add('/login', fn () => LoginController::login(), 'post');
 
-Route::add('/register', fn() =>RegisterController::store(),'post');
-Route::add('/logout', fn() =>LogoutController::logout());
+Route::add('/', fn () => function () {
+
+    var_dump("Hello world");
+}, 'get');
+
+Route::add('/register', fn () => RegisterController::store(), 'post');
+Route::add('/logout', fn () => LogoutController::logout());
 
 //testing authorization (Not part of task. Just want to test if its working)
-Route::add('/profile', fn() =>ProfileController::index());
+Route::add('/profile', fn () => ProfileController::index());
 
 Route::run(BASEPATH);
