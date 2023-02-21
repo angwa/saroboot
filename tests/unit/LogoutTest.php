@@ -1,5 +1,6 @@
 <?php
 require_once 'PHPUnit/Autoload.php';
+
 use GuzzleHttp\Client;
 use PHPUnit\Framework\TestCase;
 
@@ -15,16 +16,16 @@ class LogoutTest extends TestCase
 			'request.options' => [
 				'exceptions' => false
 			],
-	        'headers' => [
-	            'Content-Type'  => 'application/json',
-                'Accept'        => 'application/json',
-                'Authorization'=> "Bearer $token"
-	    ]]);
+			'headers' => [
+				'Content-Type'  => 'application/json',
+				'Accept'        => 'application/json',
+				'Authorization' => "Bearer $token"
+			]
+		]);
 
 		$response = $client->get('/saroboot/api/logout');
-	 
-	    //$this->assertEquals(401, $response->getStatusCode());
-	    $this->assertTrue($response->hasHeader('Access-Control-Allow-Headers'));
-	}
 
+		//$this->assertEquals(401, $response->getStatusCode());
+		$this->assertTrue($response->hasHeader('Access-Control-Allow-Headers'));
+	}
 }
