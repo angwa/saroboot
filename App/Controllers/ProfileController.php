@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Controllers;
+
 use App\Config\Main;
 use App\Helpers\Response;
 use App\Middleware\Auth;
@@ -9,8 +11,8 @@ class ProfileController extends Auth
 	public static function index()
 	{
 		//making sure user is authenticated before using the method
-		if(!self::authenticate()){
-			return Response::message(["message"=>self::$status]);
+		if (!self::authenticate()) {
+			return Response::message(["message" => self::$status]);
 		}
 
 		//You can get details and perform actions an authenticated user can do
@@ -29,7 +31,6 @@ class ProfileController extends Auth
 		 * You can perform operations and return data  and return data instead of returning just authenticated data
 		 */
 
-		return Response::message(["message"=>"User is authenticated", "data"=>$token]);
+		return Response::message(["message" => "User is authenticated", "data" => $token]);
 	}
-
 }
